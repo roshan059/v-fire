@@ -66,22 +66,10 @@
 </template>
 
 <script>
-import { HotTable, HotColumn } from "@handsontable/vue";
-import Handsontable from "handsontable";
+
 import { mapState } from "vuex";
 export default {
-  data() {
-    return {
-      hotSettings: {
-        licenseKey: "non-commercial-and-evaluation",
-        rowHeaders: true,
-        colHeaders: ["User Name", "id"],
-        autoRowSize: true,
-        autoColumnSize: true,
-        readOnly: false,
-      },
-    };
-  },
+ 
   computed: {
     ...mapState([
       "leftSideWorkSpaceWidth",
@@ -89,10 +77,7 @@ export default {
       "userData",
     ]),
   },
-  components: {
-    HotTable,
-    HotColumn,
-  },
+
   created() {
     this.$store.dispatch("getUserdataFromFirebase");
   },
